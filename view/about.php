@@ -21,9 +21,8 @@
         echo "<p>No hay comentarios</p>";
     } else {
         foreach ($comments as $comment) {
-
             echo "
-            <p><i>Uusuario: " . $comment['usuario_id'] . "</i></p>
+            <p><i>Usuario: " . $comment['usuario_id'] . "</i></p>
             <p>Comentario número: <i>" . $comment['id'] . "</i></p>
             <p>Comentario:</br><b>" . htmlspecialchars($comment['comentario']) . "</b></p>";
         }
