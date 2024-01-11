@@ -13,9 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['enviar'])) {
     $commentModel->saveComment($user_id, $comment);
     // Redirigir para evitar el reenvío del formulario
     header("Location: index.php?page=about");
+    // Siempre después de una redirección se debe hacer un exit
     exit();
 }
 
-$comments = $commentModel->getComments();
 require 'view/about.php';
 ?>

@@ -15,19 +15,7 @@
         <textarea type="text" id="comment" name="comment" placeholder="Escribe tu comentario"></textarea>
         <input type="submit" value="Enviar comentario" name="enviar">
     </form>
-    <h2>Comentarios</h2>
-    <?php
-    if (empty($comments)) {
-        echo "<p>No hay comentarios</p>";
-    } else {
-        foreach ($comments as $comment) {
-            echo "
-            <p><i>Usuario: " . $comment['usuario_id'] . "</i></p>
-            <p>Comentario número: <i>" . $comment['id'] . "</i></p>
-            <p>Comentario:</br><b>" . htmlspecialchars($comment['comentario']) . "</b></p>";
-        }
-    }
-    ?>
+    
 
 </body>
 

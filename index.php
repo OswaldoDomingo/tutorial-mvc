@@ -14,8 +14,9 @@ switch ($page) {
     case 'about':
         require 'controller/about.php';
         break;
+    case 'lista':
+        require 'controller/lista.php';
+        break;
     default:
         require 'controller/error.php'; // Controlador para página de error
 }
-
-?>
