@@ -34,9 +34,17 @@ class CommentModel {
 
     // Método para borrar comentarios de la base de datos
     public function deleteComments($idsParaBorrar) {
+        // $idsParaBorrar es un array con los ids de los comentarios que queremos borrar
+        //Por ejemplo $idsParaBorrar es [1,4,55,6,78,90]. 
+        //Necesitamos convertirlo en una cadena para la consulta SQL: (1,4,55,6,78,90) 
         if (!empty($idsParaBorrar)) {
+
             $placeholders = implode(',', array_fill(0, count($idsParaBorrar), '?'));
+            //$stmt = $this->pdo->prepare("DELETE FROM comentarios WHERE id IN (?,?,?,?,?,?)"); // 6 placeholders para 6 ids a borrar 
+
             $stmt = $this->pdo->prepare("DELETE FROM comentarios WHERE id IN ($placeholders)");
+            //DELETE FROM comentarios WHERE id IN (1,4,55,6,78,90)
+
             $stmt->execute($idsParaBorrar);
         }
     }
