@@ -31,5 +31,14 @@ class CommentModel {
         $stmt = $this->pdo->query("SELECT * FROM comentarios");
         return $stmt->fetchAll();
     }
+
+    // Método para borrar comentarios de la base de datos
+    public function deleteComments($idsParaBorrar) {
+        if (!empty($idsParaBorrar)) {
+            $placeholders = implode(',', array_fill(0, count($idsParaBorrar), '?'));
+            $stmt = $this->pdo->prepare("DELETE FROM comentarios WHERE id IN ($placeholders)");
+            $stmt->execute($idsParaBorrar);
+        }
+    }
 }
 ?>

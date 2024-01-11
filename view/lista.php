@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+    <!-- view/lista.php -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
 <body>
 <h1><?php echo $cabecera ?></h1>
 <p>Volver a <a href="index.php?page=home">Inicio</a></p>
+<form action="index.php?page=lista" method="post">
     <?php
     if (empty($comments)) {
         echo "<p>No hay comentarios</p>";
@@ -16,6 +18,7 @@
         foreach ($comments as $comment) {
             echo "
             <div class='comentario'>
+            <input type='checkbox' name='borrar[]' value='" . $comment['id'] . "'>
             <p><i>Usuario: " . $comment['usuario_id'] . "</i></p>
             <p>Comentario número: <i>" . $comment['id'] . "</i></p>
             <p>Comentario:</br><b>" . htmlspecialchars($comment['comentario']) . "</b></p>
@@ -23,5 +26,7 @@
         }
     }
     ?>
+    <input type="submit" name="borrarComentarios" value="Borrar comentarios">
+</form>
 </body>
 </html>

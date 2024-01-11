@@ -9,7 +9,15 @@ $cabecera = "Listado de comentarios";
 
 $comments = $commentModel->getComments();
 
+if (isset($_POST['borrarComentarios'])) {
+    $idsParaBorrar = $_POST['borrar'];
+    $commentModel = new CommentModel();
+    $commentModel->deleteComments($idsParaBorrar);
 
+    // Redirigir para evitar el reenvío del formulario
+    header("Location: index.php?page=lista");
+    exit();
+}
 
 
 // Cargar la vista
