@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de comentarios</title>
+    <link rel="shortcut icon" href="img/icono.ico" type="image/x-icon">
     <link rel="stylesheet" href="view/css/estilo.css">
 </head>
 <body>
