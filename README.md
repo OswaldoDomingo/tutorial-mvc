@@ -1,5 +1,6 @@
 # Documentación del Proyecto MVC
-![Imagen](view/img/logo2.png)
+
+<p align=center> <img src="view/img/logo2.png"> </p>
 
 ## Introducción
 
