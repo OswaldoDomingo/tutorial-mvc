@@ -2,8 +2,7 @@
 <html>
 <head>
     <title>Página de inicio</title>
-    <link rel="shortcut icon" href="img/icono.ico" type="image/x-icon">
-
+    <link rel="shortcut icon" href="./view/img/icono.ico" type="image/x-icon">
 </head>
 <body>
     <h1><?php echo $mensaje; ?></h1>
